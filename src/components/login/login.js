@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from "react"
 import facade from "./loginFacade";
- 
+import './style.css' 
+
+
 function LogIn({ login }) {
   const init = { username: "", password: "" };
   const [loginCredentials, setLoginCredentials] = useState(init);
@@ -15,7 +17,7 @@ function LogIn({ login }) {
  
   return (
     <div>
-      <h2>Login</h2>
+     
       <form onChange={onChange} >
         <input placeholder="User Name" id="username" />
         <input placeholder="Password" id="password" />
@@ -33,7 +35,7 @@ function LoggedIn() {
  
   return (
     <div>
-      <h2>Data Received from server</h2>
+      <h2></h2>
       <h3>{dataFromServer}</h3>
     </div>
   )
@@ -51,13 +53,13 @@ function Login() {
    } 
  
   return (
-    <div>
+    <nav>
       {!loggedIn ? (<LogIn login={login} />) :
         (<div>
           <LoggedIn />
           <button onClick={logout}>Logout</button>
         </div>)}
-    </div>
+    </nav>
   )
  
 }
