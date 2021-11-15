@@ -5,6 +5,7 @@ import Registration from "../Registration";
 import { render } from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import Login from "../login/login";
 import {
     BrowserRouter as Router,
@@ -18,6 +19,7 @@ import {
     NavLink
   } from "react-router-dom";
 import Register from "../Registration";
+import Headlines from "../../Headlines";
 
 
 
@@ -33,7 +35,7 @@ function Header() {
 <Navbar className='container d-flex align-items-center justify-content-center py-3 nav'>
 
 <li><NavLink  to='/'>Casmag</NavLink></li>
-<li><NavLink to='/'>Ex1</NavLink></li>
+<li><NavLink to='/Headlines'>Ex1</NavLink></li>
 <li><NavLink to='/'>EX2</NavLink></li>
 <li><NavLink exact to="/Signup">Signup</NavLink></li>
 
@@ -45,15 +47,7 @@ function Header() {
 </Navbar>
      
 
-<Routes>
-      <Route exact path="/">
-       
-      </Route>
-      <Route path="/Signup" element={<Register />} />
-       
-    
-      
-    </Routes>
+
 
 
 
@@ -61,6 +55,17 @@ function Header() {
 
 
 </header>
+
+<Routes>
+      <Route exact path="/">
+       
+      </Route>
+      <Route path="/Signup" element={<Register />} />
+      <Route path="/Headlines" element={<Headlines/>} />   
+    
+      
+    </Routes>
+
 </Router>  
     )
     
