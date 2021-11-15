@@ -164,9 +164,9 @@ export default class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="userpass">Password</label>
                   <Input
-                    type="password"
+                    type="userpass"
                     className="form-control"
                     name="password"
                     value={this.state.password}

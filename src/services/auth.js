@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/info";
+const API_URL = "http://localhost:8080/devops_starter_war_exploded";
 
 class AuthService {
   
 
   register(username, email, password) {
-    return axios.post(API_URL + "signup", {
+    return axios.post(API_URL + "/api/info/signup", {
       username,
       email,
       password
@@ -14,7 +14,7 @@ class AuthService {
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('users'));;
+    return JSON.parse(localStorage.getItem('user'));;
   }
 }
 
