@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react"
+import { Row } from "react-bootstrap";
 import facade from "./loginFacade";
 import './style.css' 
 
@@ -16,14 +17,16 @@ function LogIn({ login }) {
   }
  
   return (
-    <div>
+    
      
       <form onChange={onChange} >
-        <input placeholder="Username" id="username" />
-        <input placeholder="Password" id="password" input type="password" />
-        <button onClick={performLogin}>Login</button>
+        <div class="row">
+        <input placeholder="Username" id="username" class="form-control-sm col me-2"/>
+        <input placeholder="Password" id="password" class="form-control-sm col" input type="password" />
+        <button onClick={performLogin} class="btn btn-primary col-2 ms-2">Login</button>
+      </div>
       </form>
-    </div>
+    
   )
  
 }

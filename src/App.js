@@ -10,6 +10,9 @@ import {
   } from "react-router-dom";
 import Register from "./components/Registration";
 import './App.css'
+import * as style from 'react-bootstrap';
+
+
 function App() {
   
  

@@ -1,6 +1,7 @@
+import { Button,Card } from 'react-bootstrap';
 import axios from "axios";
 import React, { useState,useEffect,Component } from "react"
-
+import './headline.css'
 const API_URL = "http://localhost:8080/devops_starter_war_exploded";
 
 export default class Headlines extends Component{
@@ -16,20 +17,22 @@ export default class Headlines extends Component{
         }
       };
 
-      componentDidMount(){
-      }
+     
 
        fectData(params) {
-        console.log('te')
-
-        return axios.get(API_URL + "/api/news/headlines").then((res) =>{
-            console.log(res.data.articles)
+        return axios.get(API_URL + "/api/news/headlines")
+            .then((res) =>{
+                console.log(res)
             this.setState({news:res.data.articles})
         });
 
           
       }
-
+      
+      
+    //  {this.state.news.map(article =>(
+  //      <p>{article.title}</p>
+  //  ))}
 
       renderNews = () =>{
 
@@ -47,10 +50,25 @@ export default class Headlines extends Component{
       render() {
         return (
          
-            <><h1>hej</h1>
-        {this.state.news.map(article =>(
-            <p>{article.title}</p>
-        ))}
+            <>
+
+
+  {this.state.news.map(article =>(
+   
+<Card style={{ width: '40rem' }}>
+  <Card.Img variant="top" src={article.urlToImage} />
+  <Card.Body>
+    <Card.Title><a target="_blank" href= {article.url}>{article.title}</a></Card.Title>
+    <Card.Text>
+      {article.description}
+    </Card.Text>
+    
+  </Card.Body>
+</Card>
+
+))}     
+
+        
             </>
         );
       

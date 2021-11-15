@@ -32,14 +32,15 @@ function Header() {
 <header className='header'>
  
 
-<Navbar className='container d-flex align-items-center justify-content-center py-3 nav'>
+
+<Navbar className='container nav left-align'>
 
 <li><NavLink  to='/'>Casmag</NavLink></li>
 <li><NavLink to='/Headlines'>Ex1</NavLink></li>
 <li><NavLink to='/'>EX2</NavLink></li>
 <li><NavLink exact to="/Signup">Signup</NavLink></li>
 
-
+<div class=""></div>
 <div class="login-container-right">
 <Login></Login>
 </div>
