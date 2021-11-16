@@ -59,8 +59,10 @@ export default class Headlines extends Component{
   <Card.Img variant="top" src={article.urlToImage} />
   <Card.Body>
     <Card.Title><a target="_blank" href= {article.url}>{article.title}</a></Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">{article.publishedAt}</Card.Subtitle>
     <Card.Text>
       {article.description}
+     
     </Card.Text>
     
   </Card.Body>
