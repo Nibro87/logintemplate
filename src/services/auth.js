@@ -1,6 +1,7 @@
 import axios from "axios";
+import { SERVER_URL } from "../settings";
 
-const API_URL = "http://localhost:8080/devops_starter_war_exploded";
+const API_URL = SERVER_URL;
 
 class AuthService {
   

@@ -2,6 +2,7 @@ import { Button,Card } from 'react-bootstrap';
 import axios from "axios";
 import React, { useState,useEffect,Component } from "react"
 import './headline.css'
+
 const API_URL = "http://localhost:8080/devops_starter_war_exploded";
 
 export default class Headlines extends Component{
@@ -64,7 +65,7 @@ export default class Headlines extends Component{
       {article.description}
      
     </Card.Text>
-    
+   
   </Card.Body>
 </Card>
 

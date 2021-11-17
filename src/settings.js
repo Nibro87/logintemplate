@@ -1,3 +1,3 @@
-const SERVER_URL = "http://localhost:8080/devops_starter_war_exploded"
+const SERVER_URL = "https://www.casmag.live/tomcat/CA2-1.0/"
 
 export{ SERVER_URL};

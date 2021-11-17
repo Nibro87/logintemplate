@@ -36,7 +36,7 @@ function Header() {
 <Navbar className='container nav left-align'>
 
 <li><NavLink  to='/'>Casmag</NavLink></li>
-<li><NavLink to='/Headlines'>Ex1</NavLink></li>
+<li><NavLink to='/Headlines'>Todays Headlines</NavLink></li>
 <li><NavLink to='/'>EX2</NavLink></li>
 <li><NavLink exact to="/Signup">Signup</NavLink></li>
 
