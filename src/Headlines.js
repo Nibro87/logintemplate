@@ -2,8 +2,9 @@ import { Button,Card } from 'react-bootstrap';
 import axios from "axios";
 import React, { useState,useEffect,Component } from "react"
 import './headline.css'
+import CommentBox from './components/comment';
 
-const API_URL = "http://localhost:8080/devops_starter_war_exploded";
+const API_URL = "https://www.casmag.live/tomcat/CA2-1.0/";
 
 export default class Headlines extends Component{
 
@@ -65,7 +66,7 @@ export default class Headlines extends Component{
       {article.description}
      
     </Card.Text>
-   
+    <CommentBox/>
   </Card.Body>
 </Card>
 

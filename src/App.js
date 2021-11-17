@@ -1,7 +1,8 @@
-import React, { useState,useEffect } from "react"
+import React, { useState,useEffect, PureComponent } from "react"
 import Login from "./components/login/login";
 import Header from "./components/Navigationbar/index";
 import Footer from "./components/footer";
+import CommentBox from "./components/comment";
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,8 +28,7 @@ function App() {
                
                 <Header />
     
-   
-  
+
 
                 <Footer />
 
