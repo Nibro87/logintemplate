@@ -1,7 +1,7 @@
 import axios from "axios";
 import { SERVER_URL } from "../settings";
 
-const API_URL = SERVER_URL;
+const API_URL = "http://localhost:8080/CA2_war_exploded";
 
 class AuthService {
   

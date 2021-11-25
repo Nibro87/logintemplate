@@ -4,7 +4,7 @@ import React, { useState,useEffect,Component } from "react"
 import './headline.css'
 import CommentBox from './components/comment';
 
-const API_URL = "https://www.casmag.live/tomcat/CA2-1.0/";
+const API_URL = "";
 
 export default class Headlines extends Component{
 

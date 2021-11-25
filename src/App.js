@@ -12,6 +12,8 @@ import {
 import Register from "./components/Registration";
 import './App.css'
 import * as style from 'react-bootstrap';
+import ResultList from "./ResultList";
+import ParentComponent from "./Parent"
 
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
                
                
                 <Header />
-    
+
 
 
                 <Footer />
