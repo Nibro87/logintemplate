@@ -1,7 +1,7 @@
 import { SERVER_URL } from "../../settings";
 
 
-const URL = {SERVER_URL};
+const URL = "http://localhost:8080/devops_starter_war_exploded/";
  
 function handleHttpErrors(res) {
  if (!res.ok) {
