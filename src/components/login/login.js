@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react"
-import { Row } from "react-bootstrap";
+import { Row,NavDropdown } from "react-bootstrap";
 import facade from "./loginFacade";
 import './style.css' 
 
@@ -39,7 +39,13 @@ function LoggedIn() {
   return (
     <div>
       <h2></h2>
-      <h3>{dataFromServer}</h3>
+      <NavDropdown title={dataFromServer} id="navbarScrollingDropdown">
+      <NavDropdown.Item href="#action3">Profil</NavDropdown.Item>
+          <NavDropdown.Item href="#action4">activity log</NavDropdown.Item>
+          <NavDropdown.Item href="#action4">Search history</NavDropdown.Item>
+          <NavDropdown.Item href="logg">Logout</NavDropdown.Item>
+         
+        </NavDropdown>
     </div>
   )
  
@@ -56,11 +62,11 @@ function Login() {
    } 
  
   return (
-    <nav>
+    <nav className="logg">
       {!loggedIn ? (<LogIn login={login} />) :
         (<div>
           <LoggedIn />
-          <button onClick={logout}>Logout</button>
+          {/* <button onClick={logout}  class="btn btn-primary">Logout</button> */}
         </div>)}
     </nav>
   )
