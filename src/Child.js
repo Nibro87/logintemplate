@@ -10,7 +10,7 @@ constructor(props) {
         super(props);
 
         this.state ={
-            news: ["test"],
+            news: [],
             searchText: ""
         }
 
