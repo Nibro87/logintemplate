@@ -1,4 +1,4 @@
-import { Button,Card } from 'react-bootstrap';
+import { Button,Card,CloseButton } from 'react-bootstrap';
 import axios from "axios";
 import React, { useState,useEffect,Component } from "react"
 import './headline.css'
@@ -59,6 +59,7 @@ export default class Headlines extends Component{
   {this.state.news.map(article =>(
    
 <Card style={{ width: '40rem' }}>
+<CloseButton />
   <Card.Img variant="top" src={article.urlToImage} />
   <Card.Body>
     <Card.Title><a target="_blank" href= {article.url}>{article.title}</a></Card.Title>
