@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8080/CA2_war_exploded";
 
-class Child extends Component {
+class SearchArticle extends Component {
 
 constructor(props) {
         super(props);
@@ -69,7 +69,7 @@ console.log(e)
             <div>
                 
                  <input placeholder="Search" id="Search" onChange={this.searchChange}  class="form-control-sm col me-2"/>
-                 <button onClick={this.handleClick}>Click this child!</button>
+                 <button onClick={this.handleClick}>Search</button>
             </div>
         );
     }
@@ -79,4 +79,4 @@ console.log(e)
 
 
 }
-export default Child;
+export default SearchArticle;

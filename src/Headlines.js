@@ -4,29 +4,30 @@ import React, { useState,useEffect,Component } from "react"
 import './headline.css'
 import CommentBox from './components/comment';
 
-const API_URL = "";
+const API_URL = "http://localhost:8080/CA2_war_exploded/api";
 
 export default class Headlines extends Component{
 
 
     constructor(props) {
         super(props);
+        
         this.fectData()
 
         //this.renderNews = this.renderNews.bind(this);
         this.state ={
-            news:[]
+           news:[]
         }
       };
 
-     
+   
 
        fectData(params) {
-        return axios.get(API_URL + "/api/news/headlines")
+        return axios.get(API_URL + "/info/allposts")
             .then((res) =>{
                 console.log(res)
             this.setState({news:res.data.articles})
-        });
+        },);
 
           
       }

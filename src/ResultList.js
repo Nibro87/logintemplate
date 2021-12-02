@@ -1,6 +1,7 @@
 import axios from "axios";
-import { Button,Card } from 'react-bootstrap';
-import ChildComponent from "./Child";
+import { Button,Card,Comment } from 'react-bootstrap';
+
+import SearchArticleComponent from "./Child";
 const { Component } = require("react");
 
 
@@ -12,11 +13,12 @@ const API_URL = "http://localhost:8080/CA2_war_exploded";
 
     constructor(props) {
         super(props);
-        
+     
       
     
         this.state ={
             news:[],
+            commentText:""
             
         }
     
@@ -24,11 +26,21 @@ const API_URL = "http://localhost:8080/CA2_war_exploded";
     }
    
 
-    shareArticle = (data) => {
-    
-    axios.post(API_URL + "/api/info/share",data)
+
+    addComment =(e) =>{
+        e.preventDefault()
+        this.setState({commentText: e.target.value})   
+        
+    }
+
+
+
+    shareArticle = (article) => {
+    article.comment = this.state.commentText
+    console.log(article);
+    axios.post(API_URL + "/api/info/share",article)
     .then(()=>{})
-    
+   
     }
 
 
@@ -48,7 +60,7 @@ const foundArticles = this.state.news.length != 0
 return(
             <>
         <div>
-            <ChildComponent parentCallback = {this.setNews} />
+            <SearchArticleComponent parentCallback = {this.setNews} />
       
             <>
 
@@ -64,14 +76,21 @@ return(
   <Card.Text> 
    {article.description}
    </Card.Text>
-   
+
+ 
+
 </Card.Body>
 
-<button onClick={() =>{this.shareArticle(article)}} variant="primary">Share</button>
+
+<input type="text" name="comment" onChange={this.addComment}/> 
 
 
+
+
+<button onClick={() =>{this.shareArticle(article)}}  variant="primary">Share</button>
 
 </Card>
+
 
 )) : <p>no articles</p>}
    

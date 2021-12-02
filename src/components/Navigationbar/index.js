@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ResultListComponent from "../../ResultList";
 
+
 import Login from "../login/login";
 import {
     BrowserRouter as Router,
@@ -22,6 +23,7 @@ import Register from "../Registration";
 import Headlines from "../../Headlines";
 import Searchbar from "../Searchbar";
 import ResultList from "../../ResultList";
+import Wall from "../../wall";
 
 
 
@@ -38,6 +40,7 @@ function Header() {
 <Navbar className='container nav left-align'>
 
 <li><NavLink  to='/'>Casmag</NavLink></li>
+<li><NavLink  to='/News-feed'>News feed</NavLink></li>
 <li><NavLink to='/Headlines'>Todays Headlines</NavLink></li>
 <li><NavLink to='/News'>News search</NavLink></li>
 <li><NavLink exact to="/Signup">Signup</NavLink></li>
@@ -66,6 +69,7 @@ function Header() {
       <Route path="/Signup" element={<Register />} />
       <Route path="/Headlines" element={<Headlines/>} />   
       <Route path="/News" element={<ResultList/>} />
+      <Route path="/News-feed" element={<Wall/>}/>
       
     </Routes>
 
