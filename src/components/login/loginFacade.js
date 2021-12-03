@@ -2,6 +2,7 @@ import { SERVER_URL } from "../../settings";
 
 
 
+/// Made with help from youtube guides
 
 
 const URL = "http://localhost:8080/CA2_war_exploded";
@@ -15,7 +16,7 @@ function handleHttpErrors(res) {
 }
  
 function apiFacade() {
- /* Insert utility-methods from a latter step (d) here (REMEMBER to uncomment in the returned object when you do)*/
+
  
  const setToken = (token) => {
     localStorage.setItem('jwtToken', token)

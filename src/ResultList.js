@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Button,Card,Comment } from 'react-bootstrap';
-
+import SERVER_URL from "./settings"
 import SearchArticleComponent from "./Child";
 const { Component } = require("react");
 
 
-const API_URL = "http://localhost:8080/CA2_war_exploded";
+
 
 
  class ResultList extends Component{
@@ -38,7 +38,7 @@ const API_URL = "http://localhost:8080/CA2_war_exploded";
     shareArticle = (article) => {
     article.comment = this.state.commentText
     console.log(article);
-    axios.post(API_URL + "/api/info/share",article)
+    axios.post(SERVER_URL + "/api/info/share",article)
     .then(()=>{})
    
     }

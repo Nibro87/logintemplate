@@ -3,6 +3,7 @@ import { Row,NavDropdown } from "react-bootstrap";
 import facade from "./loginFacade";
 import './style.css' 
 
+/// Made with help from youtube guides 
 
 function LogIn({ login }) {
   const init = { username: "", password: "" };
