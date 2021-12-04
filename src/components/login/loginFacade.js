@@ -2,7 +2,7 @@ import { SERVER_URL } from "../../settings";
 
 
 
-/// Made with help from youtube guides
+
 
 
 const URL = "http://localhost:8080/CA2_war_exploded";
@@ -41,7 +41,7 @@ const logout = () => {
 
 const login = (user, password) =>  {const options = makeOptions("POST", true,{username: user, password: password });
 return fetch(URL + "/api/login", options)
-  .then(handleHttpErrors)
+  
   .then(res => {setToken(res.token) })
 }
 

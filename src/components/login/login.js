@@ -3,7 +3,7 @@ import { Row,NavDropdown } from "react-bootstrap";
 import facade from "./loginFacade";
 import './style.css' 
 
-/// Made with help from youtube guides 
+
 
 function LogIn({ login }) {
   const init = { username: "", password: "" };
@@ -44,7 +44,7 @@ function LoggedIn() {
       <NavDropdown.Item href="#action3">Profil</NavDropdown.Item>
           <NavDropdown.Item href="#action4">activity log</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Search history</NavDropdown.Item>
-          <NavDropdown.Item href="logg">Logout</NavDropdown.Item>
+          <NavDropdown.Item  href="logg">Logout</NavDropdown.Item>
          
         </NavDropdown>
     </div>
