@@ -36,7 +36,9 @@ function LoggedIn() {
   
   useEffect(() => { facade.fetchData().then(data=> setDataFromServer(data.msg));
   }, [])
- 
+
+
+
   return (
     <div>
       <h2></h2>
@@ -44,7 +46,7 @@ function LoggedIn() {
       <NavDropdown.Item href="#action3">Profil</NavDropdown.Item>
           <NavDropdown.Item href="#action4">activity log</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Search history</NavDropdown.Item>
-          <NavDropdown.Item  href="logg">Logout</NavDropdown.Item>
+          <NavDropdown.Item href="logg">Logout</NavDropdown.Item>
          
         </NavDropdown>
     </div>

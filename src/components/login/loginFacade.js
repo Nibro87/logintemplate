@@ -1,5 +1,5 @@
 import { SERVER_URL } from "../../settings";
-
+import jwt_decode from "jwt-decode";
 
 
 
@@ -20,6 +20,7 @@ function apiFacade() {
  
  const setToken = (token) => {
     localStorage.setItem('jwtToken', token)
+   
   }
 const getToken = () => {
   return localStorage.getItem('jwtToken')
@@ -37,15 +38,26 @@ const logout = () => {
 
 
 
+const login = (user, password) => {
+  const options = makeOptions("POST", true, {
+    username: user,
+    password: password,
+  });
+  return fetch(URL + "/api/login", options)
+    .then(handleHttpErrors)
+    .then((res) => {
+      setToken(res.token);
+    });
+};
 
 
-const login = (user, password) =>  {const options = makeOptions("POST", true,{username: user, password: password });
-return fetch(URL + "/api/login", options)
-  
-  .then(res => {setToken(res.token) })
-}
 
-const fetchData = () => { const options = makeOptions("GET",true); //True add's the token
+
+
+
+
+const fetchData = () => 
+{ const options = makeOptions("GET",true); //True add's the token
 return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
 }
 
@@ -74,7 +86,9 @@ const makeOptions= (method,addToken,body) =>{
      loggedIn,
      login,
      logout,
-     fetchData
+     fetchData,
+     handleHttpErrors
+
  }
 
  

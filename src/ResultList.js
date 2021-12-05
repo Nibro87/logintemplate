@@ -2,6 +2,7 @@ import axios from "axios";
 import { Button,Card,Comment } from 'react-bootstrap';
 import SERVER_URL from "./settings"
 import SearchArticleComponent from "./Child";
+import facade from "./components/login/loginFacade";
 const { Component } = require("react");
 
 
@@ -25,7 +26,7 @@ const { Component } = require("react");
     
     }
    
-
+   
 
     addComment =(e) =>{
         e.preventDefault()
@@ -34,15 +35,16 @@ const { Component } = require("react");
     }
 
 
-
+ 
     shareArticle = (article) => {
+   
     article.comment = this.state.commentText
     console.log(article);
     axios.post(SERVER_URL + "/api/info/share",article)
     .then(()=>{})
-   
+    
     }
-
+    
 
     setNews=(data)=> {
         console.log(data)
@@ -56,7 +58,7 @@ const { Component } = require("react");
 
     render() {
 const foundArticles = this.state.news.length != 0
-        
+     
 return(
             <>
         <div>
@@ -107,10 +109,10 @@ return(
     
     }
 
+    }
 
 
 
 
 
-}
 export default ResultList;

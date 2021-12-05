@@ -2,10 +2,10 @@ import React, { useState,useEffect,Component } from "react"
 import { Button,Card,CloseButton } from 'react-bootstrap';
 import axios from "axios";
 import SERVER_URL from "./settings"
-
+import facade from "./components/login/loginFacade";
 
 function DeleteArticle(params) {
-  return axios.get(SERVER_URL +"/api/info/delete?id="+params)
+  return fetch(SERVER_URL +"/api/info/delete?id="+params)
   .then((res) =>{
    setTimeout(()=>{window.location.reload(false)},500)
    
@@ -23,9 +23,14 @@ function Wall() {
     const [error, setError] = useState();
     const [loading, setLoading] = useState(false);
     useEffect(() => {
-        
-                 fetch(SERVER_URL + "/api/info/allposts")
-                .then((res) => res.json())
+            
+               if (facade.loggedIn){
+              
+             
+               const options = facade.makeOptions("GET",true);
+               fetch(`${SERVER_URL}/api/info/allposts`,options)
+               .then(facade.handleHttpErrors)
+                
                 .then((data) => {
                   setData(data);
                   console.log(data)
@@ -38,15 +43,15 @@ function Wall() {
                 });
               
         setLoading(true);
-    
+              }
     }, []);
-  
+   
     if (loading) {
       return <p>Data is loading...</p>;
     }
   
     if (error || !Array.isArray(data)) {
-      return <p>There was an error loading your data!</p>;
+      return <p>Login to view articles!</p>;
     }
   
     return (
